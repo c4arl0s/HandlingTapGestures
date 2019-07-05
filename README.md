@@ -13,5 +13,25 @@ Ways to attach a gesture recognizer:
 
 ### You can configure a tap gesture recognizer to require any number of taps—for example, single taps or double taps—before your action method is called.
 
+- Create an instance of the recognizer
+- Add it to the view that will receive the touch events.
+
+``` objective-c
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UITapGestureRecognizer *oneTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    oneTap.numberOfTapsRequired = 1;
+    [self.imageView addGestureRecognizer:oneTap];
+}
+```
+
+``` objective-c
+-(void)imageTapped:(UITapGestureRecognizer *)recognizer
+{
+    NSLog(@"you tapped on imageView");
+}
+```
+
 
 
