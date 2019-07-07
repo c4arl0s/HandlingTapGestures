@@ -27,7 +27,7 @@ Ways to attach a gesture recognizer:
 
 #import "ViewController.h"
 
-@interface ViewController () <UIGestureRecognizerDelegate>
+@interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
@@ -41,13 +41,13 @@ Ways to attach a gesture recognizer:
     oneTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
     oneTapGesture.numberOfTapsRequired = 1;
     self.imageView.userInteractionEnabled = YES;
-    oneTapGesture.delegate = self;
     [self.imageView addGestureRecognizer:oneTapGesture];
 }
 
 - (void)imageTapped:(UITapGestureRecognizer *)sender
 {
     NSLog(@"you tapped the image");
+    self.imageView.backgroundColor = [UIColor blackColor];
 }
 
 
