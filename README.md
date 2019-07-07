@@ -113,6 +113,13 @@ Ways to attach a gesture recognizer:
 }
 ```
 
+``` console
+2019-07-06 21:09:58.972797-0500 SwitchCase_objectiveC[9956:1764589] you tapped on the image view
+2019-07-06 21:10:00.000794-0500 SwitchCase_objectiveC[9956:1764589] you tapped on the view container
+```
+
+
+
 
 
 
