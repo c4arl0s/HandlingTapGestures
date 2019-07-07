@@ -15,6 +15,7 @@ Ways to attach a gesture recognizer:
 
 - Create an instance of the recognizer
 - Add it to the view that will receive the touch events.
+- Type the selector method
 
 ``` objective-c
 //
