@@ -17,20 +17,41 @@ Ways to attach a gesture recognizer:
 - Add it to the view that will receive the touch events.
 
 ``` objective-c
+//
+//  ViewController.m
+//  SwitchCase_objectiveC
+//
+//  Created by Carlos Santiago Cruz on 6/29/19.
+//  Copyright © 2019 Carlos Santiago Cruz. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface ViewController () <UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@end
+
+@implementation ViewController
+{
+    UITapGestureRecognizer *oneTapGesture;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITapGestureRecognizer *oneTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
-    oneTap.numberOfTapsRequired = 1;
-    [self.imageView addGestureRecognizer:oneTap];
+    oneTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    oneTapGesture.numberOfTapsRequired = 1;
+    self.imageView.userInteractionEnabled = YES;
+    oneTapGesture.delegate = self;
+    [self.imageView addGestureRecognizer:oneTapGesture];
 }
-```
 
-``` objective-c
--(void)imageTapped:(UITapGestureRecognizer *)recognizer
+- (void)imageTapped:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"you tapped on imageView");
+    NSLog(@"you tapped the image");
 }
+
+
+@end
 ```
 
 
