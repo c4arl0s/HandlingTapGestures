@@ -55,7 +55,7 @@ Ways to attach a gesture recognizer:
 @end
 ```
 
-### Remember to self.imageView.userInteractionEnabled = YES;
+# Remember to self.imageView.userInteractionEnabled = YES;
 
 ```console
 2019-07-06 20:27:58.054297-0500 SwitchCase_objectiveC[9467:1717929] you tapped the image
@@ -63,7 +63,7 @@ Ways to attach a gesture recognizer:
 
 ![Screen Shot 2019-07-06 at 8 28 32 PM](https://user-images.githubusercontent.com/24994818/60762818-4c902b80-a02d-11e9-9fc2-1d29e920cfab.png)
 
-### what to do if you want to detect which view you tapped.
+# What to do if you want to detect which view you tapped.
 
 ``` objective-c
 //
