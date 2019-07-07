@@ -54,5 +54,12 @@ Ways to attach a gesture recognizer:
 @end
 ```
 
+### Remember to self.imageView.userInteractionEnabled = YES;
+
+```console
+2019-07-06 20:27:58.054297-0500 SwitchCase_objectiveC[9467:1717929] you tapped the image
+```
+
+
 
 
