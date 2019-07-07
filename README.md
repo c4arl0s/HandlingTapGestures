@@ -63,5 +63,61 @@ Ways to attach a gesture recognizer:
 
 ![Screen Shot 2019-07-06 at 8 28 32 PM](https://user-images.githubusercontent.com/24994818/60762818-4c902b80-a02d-11e9-9fc2-1d29e920cfab.png)
 
+### what to do if you want to detect which view you tapped.
+
+``` objective-c
+//
+//  ViewController.m
+//  SwitchCase_objectiveC
+//
+//  Created by Carlos Santiago Cruz on 6/29/19.
+//  Copyright © 2019 Carlos Santiago Cruz. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@end
+
+@implementation ViewController
+{
+    UITapGestureRecognizer *oneViewTapGesture;
+    UITapGestureRecognizer *oneImageTapGesture;
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    oneImageTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnScreen:)];
+    oneImageTapGesture.numberOfTapsRequired = 1;
+    oneViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnScreen:)];
+    oneViewTapGesture.numberOfTapsRequired = 1;
+    oneImageTapGesture.numberOfTapsRequired = 1;
+    self.imageView.userInteractionEnabled = YES;
+    self.imageView.tag = 2;
+    self.view.tag = 1;
+    [self.view addGestureRecognizer:oneViewTapGesture];
+    [self.imageView addGestureRecognizer:oneImageTapGesture];
+}
+
+- (void)didTapOnScreen:(UITapGestureRecognizer *)sender
+{
+    if(sender.view.tag == 1)
+    {
+        NSLog(@"you tapped on the view container");
+    }
+    else if(sender.view.tag == 2)
+    {
+        NSLog(@"you tapped on the image view");
+    }
+}
+
+
+@end
+```
+
+
+
+
 
 
