@@ -88,15 +88,15 @@ Ways to attach a gesture recognizer:
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    oneImageTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnScreen:)];
-    oneImageTapGesture.numberOfTapsRequired = 1;
     oneViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnScreen:)];
     oneViewTapGesture.numberOfTapsRequired = 1;
-    oneImageTapGesture.numberOfTapsRequired = 1;
-    self.imageView.userInteractionEnabled = YES;
-    self.imageView.tag = 2;
     self.view.tag = 1;
     [self.view addGestureRecognizer:oneViewTapGesture];
+    
+    oneImageTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnScreen:)];
+    self.imageView.userInteractionEnabled = YES;
+    oneImageTapGesture.numberOfTapsRequired = 1;
+    self.imageView.tag = 2;
     [self.imageView addGestureRecognizer:oneImageTapGesture];
 }
 
@@ -111,9 +111,6 @@ Ways to attach a gesture recognizer:
         NSLog(@"you tapped on the image view");
     }
 }
-
-
-@end
 ```
 
 
