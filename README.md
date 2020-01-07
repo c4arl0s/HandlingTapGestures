@@ -7,7 +7,7 @@ Ways to attach a gesture recognizer:
 - Programatically, calling the addGestureRecognizer(_:) method of your view
 - In interface builder. 
 
-![Screen Shot 2019-07-06 at 11 45 35 PM](https://user-images.githubusercontent.com/24994818/60764099-3774c600-a048-11e9-868b-307041292ed8.png)
+![IMG_0025 2](https://user-images.githubusercontent.com/24994818/71920300-118dc280-314c-11ea-95c5-0802bdf50868.PNG)
 
 ### A UITapGestureRecognizer object provides event handling capabilities similar to those of a button—it detects a tap in its view and reports that tap to your action method.
 
